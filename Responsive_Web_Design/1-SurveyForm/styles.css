@@ -1,0 +1,81 @@
+html {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-size: 15px;
+  font-family: Helvetica;
+}
+
+body{
+font-size: 1em;
+color: ivory;
+/*
+background-image: url(https://cdn.freecodecamp.org/testable-projects-fcc/images/survey-form-background.jpeg);
+background-size:cover;
+background-repeat: no repeat;
+background-position: center;
+*/
+background-color: hsla(140, 10%, 40%, 80%);
+}
+
+[id=title], [id=description] {
+text-align: center;  
+}
+
+[id=description] {
+margin-bottom: 20px;
+}
+
+form {
+width: 80%;
+min-width: 300px;
+max-width: 500px;
+margin: 0px auto;
+padding: 20px;
+background-color: hsla(140, 10%, 25%, 80%);
+}
+
+label {
+  display: block;
+}
+
+input, select, textarea {
+width:100%;
+padding:0px;
+margin: 5px 0px 20px 0px;
+font-size: 1em;
+border: none;
+}
+
+p {
+padding: 0 0 5px 0;
+margin:0;
+}
+
+[name=recommend], .checkbox {
+width:unset;
+margin: 0 0 10px 0;
+
+}
+
+[name=comment-suggest] {
+height: 100px;
+text-align: left;
+
+}
+
+fieldset {
+border: none;
+padding: 0px;
+margin: 0px;
+}
+
+.spacer {
+margin-top: 1em;
+}
+
+[id=submit] {
+background-color: hsla(30, 50%, 50%, 80%);
+color: ivory;
+border: none;
+}

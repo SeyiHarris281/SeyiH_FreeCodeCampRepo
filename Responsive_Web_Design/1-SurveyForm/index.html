@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Survey Form</title>
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+  <header>
+    <h1 id="title">freeCodeCamp Survey Form</h1>
+    <p id="description">Thank you for taking the time to help us improve the platform</p>
+  </header>
+  <form action="#" id="survey-form">
+    <fieldset>
+      <label id="name-label" >
+        Name 
+        <input type="text" id="name" name="name" placeholder="Enter your name" required/>
+      </label>
+      <label id="email-label">
+        Email <input type="email" id="email" name="email" placeholder="Enter your email" required/>
+        </label>
+      <label id="number-label">
+        Age (optional) <input type="number" id="number" name="age" min="9" max="120" placeholder="Age" />
+      </label>
+      <label>
+        Which option best describes your current role?
+        <select id="dropdown" name="dropdown">
+          <option value="">Select current role</option>
+          <option value="student">Student</option>
+          <option value="fullTimeJob">Full Time Job</option>
+          <option value="fullTimeLearner">Full Time Learner</option>
+          <option value="preferNotToSay">Prefer not to say</option>
+          <option value="other">Other</option>
+        </select>
+      </label>
+    </fieldset>
+    <fieldset>
+      <p>Would you recommend freeCodeCamp to a friend?</p>
+      <label class="radioGroup">
+        <input type="radio" name="recommend" value="Definitely"/> Definitely
+        </label>
+      <label class="radioGroup"><input type="radio" name="recommend" value="Maybe"/> Maybe
+      </label>
+      <label class="radioGroup"><input type="radio" name="recommend" value="NotSure"/> Not sure
+      </label>
+      <label class="spacer">
+        What is your favorite feature of free code camp?
+        <select id="dropdown2" name="dropdown2">
+          <option value="">Select an option</option>
+          <option value="challenges">Challenges</option>
+          <option value="projects">Projects</option>
+          <option value="community">Community</option>
+          <option value="openSource">Open Source</option>
+        </select>
+      </label>
+    </fieldset>
+    <fieldset>
+      <p>What would you like to see improved? <span>(Check all that apply)</span></p>
+      <label>
+        <input type="checkbox" name="frontEndProjects" value="frontEndProjects" class="checkbox"/> Front-end Projects
+      </label>
+      <label>
+        <input type="checkbox" name="backEndProjects" value="backEndProjects" class="checkbox"/> Back-end Projects
+      </label>
+      <label>
+        <input type="checkbox" name="dataVisualization" value="dataVisualization" class="checkbox"/> Data Visualization
+      </label>
+      <label><input type="checkbox" name="challenges" value="challenges" class="checkbox"/> Challenges
+      </label>
+      <label>
+        <input type="checkbox" name="openSourceComm" value="openSourceComm" class="checkbox"/> Open Source Community
+      </label>
+      <label>
+        <input type="checkbox" name="gitterHelpRooms" value="gitterHelpRooms" class="checkbox"/> Gitter help rooms
+      </label>
+      <label>
+        <input type="checkbox" name="videos" value="videos" class="checkbox"/> Vidoes
+      </label>
+      <label>
+        <input type="checkbox" name="meetups" value="meetups" class="checkbox"/> City Meetups
+        </label>
+      <label>
+        <input type="checkbox" name="wiki" value="wiki" class="checkbox"/> Wiki
+      </label>
+      <label>
+        <input type="checkbox" name="forum" value="forum" class="checkbox"/> Forum
+      </label>
+      <label>
+        <input type="checkbox" name="videos" value="videos" class="checkbox"/> Additional Courses
+      </label>
+      <p class="spacer">Any comments or suggestions?</p>
+        <textarea name="comment-suggest" placeholder="Enter your comment here..."></textarea>
+      <input type="submit" id="submit" value="Submit"/>
+    </fieldset>
+    
+
+  </form>
+</body>
+
+</html>
+
