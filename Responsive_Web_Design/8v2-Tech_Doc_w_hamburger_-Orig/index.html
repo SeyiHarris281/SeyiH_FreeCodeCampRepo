@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>TechDocPg-Git Tutorial</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div class="hamburger-menu">
+      <header>Git Tutorial</header>
+    </div>
+    <input id="menu__toggle" type="checkbox" />
+    <label class="menu__btn" for="menu__toggle">
+      <span></span>
+    </label>
+    <nav id="navbar">
+      <header>Git Tutorial</header>
+      <ul>
+        <li><a class="nav-link" href="#Introduction">Introduction</a></li>
+        <li><a class="nav-link" href="#Install_Git">Install Git</a></li>
+        <li><a class="nav-link" href="#Using_Git_with_Command_Line">Using Git with Command Line</a></li>
+        <li><a class="nav-link" href="#Configure_Git">Configure Git</a></li>
+        <li><a class="nav-link" href="#Creating_Git_Folder">Creating Git Folder</a></li>
+        <li><a class="nav-link" href="#Initialize_Git">Initialize Git</a></li>
+        <li><a class="nav-link" href="#Staging_New_Files">Staging New Files</a></li>
+        <li><a class="nav-link" href="#Git_Commit">Git Commit</a></li>
+        <li><a class="nav-link" href="#Reference">Reference</a></li>
+      </ul>
+    </nav>
+    <main id="main-doc">
+      <section class="main-section" id="Introduction">
+        <header>Introduction</header>
+        <article>
+            <p>
+                Git is a version control system for tracking changes in code. It was created by linus Torvalde in 2005,
+                and has been maintained by Junio Hamano since then.
+            </p>
+            <h3>Git Capabilities</h3>
+            <ul>
+                <li>Manage projects with <strong>Repositories</strong></li>
+                <li><strong>Clone</strong> a project to work on a local copy</li>
+                <li>Control and track changes with <strong>Staging</strong> and <strong>Committing</strong></li>
+                <li><strong>Branch</strong> and <strong>Merge</strong> to allow for work on different parts and versions of a project</li>
+                <li><strong>Pull</strong> the latest version of the project to a local copy</li>
+                <li><strong>Push</strong> local updates to the main project</li>
+            </ul>
+            <h3>Using Git</h3>
+            <ul>
+                <li>Create a <strong>Repository</strong> by initializing Git in a project folder</li>
+                <li>A hidden folder is created to track changes in the repository folder</li>
+                <li>Any files with changes or newly created files are considered <strong>modified</strong></li>
+                <li>You select modified files that you want to <strong>Stage</strong></li>
+                <li><strong>Staged</strong> files are <strong>Committed</strong>, which prompts Git to store a <strong>permanent</strong> snapshot of the files</li>
+                <li>A full history of every commit can be viewed</li>
+                <li>You can revert back to any previous commit</li>
+                <li>Git does not store a separate copy of every file in every commit, but keeps track of changes made in each commit</li>
+            </ul>
+            <h3>Git vs. GitHub</h3>
+            <p>Git is not the same as GitHub. GitHub is an online/remote repository which makes tools that use Git. GitHub is very popular, and is the
+                largest host of source code in the world. However, Git can be used with other remote repositories (like Bitbucket and GitLab) as well.
+                GitHub has been owned by Microsoft since 2018.
+            </p>
+        </article>
+      </section>
+      <section class="main-section" id="Install_Git">
+        <header>Install Git</header>
+        <article>
+            <p>Git can be downloaded for free from the following site:</p>
+            <a href="https://www.git-scm.com">https://www.git-scm.com</a>
+        </article>
+      </section>
+      <section class="main-section" id="Using_Git_with_Command_Line">
+        <header>Using Git with Command Line</header>
+        <article>
+            <p>Git is used through the Command Shell or Terminal. For Windows, you can use Git bash, which comes included
+                in Git for Windows. For Mac and Linux, you can use the built-in terminal. The first step is to verify that
+                Git was properly installed by entering the following command.
+            </p>
+            <div class="codeSegment"><p>[user@localhost] $ <code>git --version</code></p></div>
+            <p>If Git is installed, it should show something like <span class="exampleResult">git version X.Y</span></p>
+            
+        </article>
+      </section>
+      <section class="main-section" id="Configure_Git">
+        <header>Configure Git</header>
+        <article>
+            <p>
+                Set up your username and email as follows. This information is recorded with each commit. It is also helpful
+                to register on GItHub with the same username and email in order to work with GitHub later on.
+            </p>
+            <div class="codeSegment">
+                <p>[user@localhost] $ <code>git config --global user.name "your.user.name"</code></p>
+                <p>[user@localhost] $ <code>git config --global user.email "you@yourEmail.com"</code></p>
+            </div>
+            <p class="noteSegment">
+                Note: Use <span class="exampleResult">global</span> to set username/email for all repositories on your
+                computer. Remove <span class="exampleResult">global</span> to set username/email only for the current
+                repository.
+            </p>
+
+        </article>
+      </section>
+      <section class="main-section" id="Creating_Git_Folder">
+        <header>Creating Git Folder</header>
+        <article>
+            <p>
+                Create a new folder for your project.
+            </p>
+            <div class="codeSegment">
+                <p>[user@localhost] $ <code>mkdir newProject</code></p>
+                <p>[user@localhost] $ <code>cd newProject</code></p>
+            </div>
+            <p class="noteSegment">
+                Note:<br>
+                <span class="exampleResult">mkdir</span> makes a new directory.<br>
+                <span class="exampleResult">cd</span> changes the current working directory.<br><br>
+                
+                If you already have a folder/directory you would like to use for Git, navigate to it in the 
+                command line, and initialize Git.
+                
+            </p>
+        </article>
+      </section>
+      <section class="main-section" id="Initialize_Git">
+        <header>Initialize Git</header>
+        <article>
+            <p>Once you are in the correct folder, you can initialize Git with the following.</p>
+            <div class="codeSegment">
+                <p>[user@localhost] $ <code>git init</code></p>
+            </div>
+            <p>
+                Git creates a hidden folder to keep track of changes in the folder you initiated it on.
+            </p>
+        </article>
+      </section>
+      <section class="main-section" id="Staging_New_Files">
+        <header>Staging New Files</header>
+        <article>
+            <p>
+                Once a repository folder has been initialized, the folder contents then need to be staged in order
+                for Git to track changes to existing files/sub-folders or new file/sub-folder additions. Prior to staging,
+                we can check the current Git <span class="exampleResult">status</span> in the repository as follows.
+            </p>
+            <div class="codeSegment">
+                <span class="commLinePrompt">[user@localhost] $ </span><code>git status</code>
+                <p>
+                  <samp>
+                    On branch master<br><br>
+                    No commits yet<br><br>
+                    Untracked files:<br>
+                    (use "git add ..." to include in what will be committed)<br>
+                    your_file1.html<br>
+                    your_file2.css<br><br>
+                    nothing added to commit but untracked files present (use "git add" to track)
+                  </samp>
+                </p>
+            </div>
+            <p>
+              The above response shows that Git is aware of two untracked files, <samp>your_file1.html</samp>
+              and <samp>your_file2.css</samp>. Files in a Git repository folder can be in one of two states.
+            </p>
+            <ul>
+              <li>Tracked - files that Git knows about and are added to the repository</li>
+              <li>Untracked - files that are in your working directory, but not added to the repository</li>
+            </ul>
+            <p>
+              Files are initially untracked when they are first added to a working directory that is also 
+              a Git repository. To get Git to track them, they have to be staged i.e. added to the staging
+              environment. This can be done as follows.
+            </p>
+            <div class="codeSegment">
+              <span class="commLinePrompt">[user@localhost] $ </span><code>git add your_file1.html your_file2.html</code>
+              <p>or</p>
+              <span class="commLinePrompt">[user@localhost] $ </span><code>git add --all</code>
+              <p>or</p>
+              <span class="commLinePrompt">[user@localhost] $ </span><code>git add --A</code>
+            </div>
+            <p class="noteSegment">
+              Note: The shorthand command for <span class="exampleResult">git add --all</span> is
+              <span class="exampleResult">git add --A</span>
+            </p>
+        </article>
+      </section>
+      <section class="main-section" id="Git_Commit">
+        <header>Git Commit</header>
+        <article>
+          <p>
+            Once files have been staged i.e. added and thus changes are being tracked, the next step
+            is to <span class="exampleResult">commit</span> changes. A <span class="exampleResult">commit</span>
+            is a save point in the project, that can be reverted to if a bug is discovered or some other changes
+            need to be made.<br><br>
+            When a <span class="exampleResult">commit</span> is made, a descriptive <strong>commit message</strong>
+            should always be included to summarize what has changed and when. A commit with a message is done as follows.
+          </p>
+          <div class="codeSegment">
+            <span class="commLinePrompt">[user@localhost] $ </span><code>git commit -m "First commit of Your Project"</code>
+            <p>
+              <samp>
+                [master (root-commit) 221ec6e] First commit of Your Project<br>
+                2 files changed, 55 insertions(+)<br>
+                create mode your_file1.html<br>
+                create mode your_file2.css<br>
+              </samp>
+            </p>
+        </div>
+        </article>
+      </section>
+      <section class="main-section" id="Reference">
+        <header>Reference</header>
+        <article>
+          <ul>
+            <li>All the documentation on this page was taken from <a href="https://www.w3schools.com/git/default.asp?remote=github" target="_blank">w3chools.com</a></li>
+          </ul> 
+
+        </article>
+      </section>
+    </main>
+  </body>
+</html>
