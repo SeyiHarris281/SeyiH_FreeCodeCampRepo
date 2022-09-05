@@ -1,0 +1,288 @@
+html {
+    box-sizing: border-box;
+    font-family: Helvetica, sans-serif;
+}
+
+*, *::before, *::after {
+    box-sizing: inherit;
+    padding: 0;
+    margin: 0;
+}
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    background-color: rgb(248, 246, 246);
+    font-size: 1.2em;
+    z-index: 1;
+}
+
+#navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 70px;
+}
+
+.logo {
+    font-size: 1.3em;
+    color: rgb(142, 137, 137);
+    padding: 20px;
+    font-weight: bold;
+}
+
+.logo span {
+    color: #004D21;
+}
+
+#menu_toggle {
+    visibility: hidden;
+}
+
+.hamburger_button {
+    position: fixed;
+    top: 30px;
+    right: 20px;
+    width: 40px;
+    height: 40px;
+    z-index: 1;
+    cursor: pointer;
+    visibility: hidden;
+   
+}
+
+.hamburger_lines,
+.hamburger_lines::before,
+.hamburger_lines::after {
+    width: 100%;
+    height: 3px;
+    background-color:#004D21;
+    position: absolute;
+    transition: 0.2s;
+    transition-property: none;
+}
+
+.hamburger_lines::before {
+    content: "";
+    top: -10px;
+}
+
+.hamburger_lines::after {
+    content: "";
+    top: 10px;
+}
+
+#menu_toggle:checked ~ .hamburger_button .hamburger_lines {
+    transform: rotate(45deg);
+}
+
+#menu_toggle:checked ~ .hamburger_button .hamburger_lines::before {
+    display: none;
+}
+
+#menu_toggle:checked ~ .hamburger_button .hamburger_lines::after {
+    top: 0;
+    transform: rotate(-90deg);
+}
+
+.menu_list {
+    display: flex;
+    list-style: none;
+    width: 40vw;
+    justify-content: space-evenly;
+}
+
+.menu_item a {
+    text-decoration: none; 
+    color: #004D21;
+}
+
+section {
+    margin-top: 80px;
+}
+
+#welcome-section {
+    width: 100%;
+    height: 500px;
+    display:flex;
+    justify-content: space-evenly;
+}
+
+#welcome-section h1 {
+    font-size: 4em;
+    width: 400px;
+    height: 100%;
+    padding-right: 60px;
+    padding-top: 80px;
+}
+
+.sign-board {
+    position: relative;
+    top: 60px;
+    left: 60px;
+    /*
+    
+    left: 5vw;
+    */
+    width: 500px;
+    height: 500px;
+}
+
+.name {
+    font-size: 3em;
+    position:absolute;
+}
+
+.initial {
+    font-size: 5em;
+    /*
+    font-weight: bold;
+    */
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 80%;
+    color: #004D21;
+    text-shadow: 10px 10px 10px #ff7300;
+    
+}
+
+.firstI {
+    color:rgb(142, 137, 137);
+}
+
+.restOfName {
+    position: absolute;
+}
+
+.lastN.name {
+    top: 100px;
+    left: 145px;
+}
+
+#projects {
+    min-height: 800px;
+}
+
+#projects h1 {
+    padding: 80px 0 30px 40px;
+    font-size: 2.5em;
+}
+.projects-container {
+    display: flex;
+    justify-content: flex-start;
+}
+
+.project-tile {
+    display: flex;
+    flex-direction: column;
+    width: 30vw;
+    height: 350px;
+    border: 1px solid black;
+    margin-left: 1.6vw;
+    margin-right: 1.6vw;
+}
+
+.projects-container a {
+    text-decoration: none;
+}
+
+.projects-container a img {
+    height:80%;
+}
+
+.project-title {
+    text-align: center;
+    padding: 20px;
+    font-size: 1.5em;
+    background-color: #004D21;
+    color: white;
+    border-top: 1px solid black;
+
+}
+
+#contact {
+    background-color: #004D21;
+    color: white;
+    width: 100%;
+    height: 800px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+#contact p {
+    font-size: 2.4em;
+    text-align: center;
+    padding: 30px;
+}
+
+.contact-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.contact-container a {
+    text-decoration: none;
+    font-size: 1.5em;
+    color: white;
+    padding: 10px
+}
+
+@media (max-width: 1040px) {
+    .projects-container {
+        flex-wrap: wrap;
+    }
+    
+    .project-tile {
+        width: 40vw;
+        margin: 0px 4vw 40px 4vw;
+    }
+
+    .sign-board {
+        left: 20px;
+    }
+}
+
+@media (max-width: 810px) {
+    .project-tile {
+        width: 52vw;
+        min-width: 320px;
+        margin: 0 auto 40px;
+    }
+
+    #welcome-section {
+        flex-wrap: wrap;
+        height: 1000px;
+    }
+
+    .hamburger_button{
+        visibility: visible;
+    }
+
+    .hamburger_lines {
+        transition-property: all;
+    }
+
+    .menu_list {
+        flex-direction: column;
+        width: 250px;
+        height: 100vh;
+        position: fixed;
+        top: 0px;
+        right: -250px;
+        background-color: rgb(248, 246, 246);
+        align-items: center;
+        transition: 0.5s;
+    }
+
+    .menu_item {
+        font-size: 1.5em;
+    }
+
+    #menu_toggle:checked ~ .menu_list {
+        right: 0;
+    }
+}
